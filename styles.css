@@ -1,0 +1,281 @@
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f2eee6;color:#24221f;font-family:Arial,Helvetica,sans-serif}
+.site-header{position:absolute;z-index:5;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:30px 42px;color:#fff}
+.brand{font:500 31px "Bodoni Moda",Georgia,serif;color:#fff;text-decoration:none;letter-spacing:-.02em;text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.site-header nav{display:flex;gap:30px}.site-header nav a{font:10px "DM Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#fff;text-decoration:none;text-shadow:0 1px 10px rgba(0,0,0,.3)}
+.hero{width:100%;height:auto;overflow:hidden;position:relative}.hero>img{display:block;width:100%;height:auto;object-fit:initial}.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3),transparent 40%,rgba(0,0,0,.3))}
+.hero-copy{position:absolute;z-index:2;left:5vw;bottom:9vh;color:#fff}.eyebrow,.section-label{font:9px "DM Mono",monospace;letter-spacing:.18em;text-transform:uppercase}.hero-copy h1{font:500 clamp(44px,6vw,86px)/.98 "Bodoni Moda",Georgia,serif;margin:20px 0 0;letter-spacing:-.025em}
+.section{padding:110px 7vw}.section-label{color:#756f66;margin-bottom:55px}.intro-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:10vw}.intro h2,.stories-head h2,.about-copy h2,.contact-content h2,.side-copy h2{font:500 clamp(38px,5vw,70px)/1.04 "Bodoni Moda",Georgia,serif;margin:0;letter-spacing:-.025em}.copy,.side-copy p,.stories-head p,.about-copy p,.contact-content p{color:#686159;line-height:1.75;font-size:15px}.copy{max-width:430px}.copy p{margin:0 0 22px}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:9vw;align-items:center;padding:0 7vw 130px}.split.reverse{grid-template-columns:.9fr 1.1fr}.photo{overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover;display:block}.photo.large{height:700px}.photo.medium{height:570px}.side-copy{max-width:480px}.side-copy h2{margin:20px 0 28px}.eyebrow.dark{color:#756f66}
+.stories{border-top:1px solid #d3cdc2;padding-top:100px;padding-bottom:120px}.stories-head{display:grid;grid-template-columns:1.15fr .55fr;gap:10vw;align-items:end;margin-bottom:65px}.stories-head p{max-width:320px;margin:0}.view-all{display:inline-block;margin-top:28px;color:#24221f;text-decoration:none;font:10px "DM Mono",monospace;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid #777067;padding-bottom:9px}
+.story-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.story-card{color:inherit;text-decoration:none;display:block}.story-photo{height:510px;overflow:hidden}.story-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}.story-card:hover img{transform:scale(1.025)}.story-meta{display:flex;justify-content:space-between;gap:15px;border-top:1px solid #bdb6ab;margin-top:14px;padding-top:13px}.story-meta strong,.story-meta span{font:10px "DM Mono",monospace;letter-spacing:.13em;text-transform:uppercase}.story-meta span{color:#817a70}
+.about{border-top:1px solid #d3cdc2}.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:9vw;align-items:center}.about-photo{height:720px}.about-copy h2{margin-bottom:42px}.about-copy p{max-width:540px;margin:0 0 20px}.text-link,.contact-link{display:inline-block;margin-top:25px;border-bottom:1px solid #777067;padding-bottom:10px;color:#24221f;text-decoration:none;font:10px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.14em}
+.contact{border-top:1px solid #d3cdc2;padding-bottom:45px}.contact-content h2{font-size:clamp(58px,8vw,110px);margin-bottom:35px}.contact-content p{max-width:430px}.contact-link{font-size:11px}.contact-footer{margin-top:120px;padding-top:20px;border-top:1px solid #cfc8bd;display:flex;justify-content:space-between;font:10px "DM Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#6d675e}.contact-footer a{color:inherit;text-decoration:none}.footer{padding:25px 7vw 40px;color:#827b72;font:9px "DM Mono",monospace;letter-spacing:.15em;text-transform:uppercase}
+@media(max-width:800px){.site-header{padding:20px;display:block}.brand{font-size:25px}.site-header nav{margin-top:18px;gap:14px;flex-wrap:wrap}.hero{min-height:650px}.hero-copy{left:20px;right:20px;bottom:55px}.hero-copy h1{font-size:48px}.section{padding:80px 20px}.intro-grid,.stories-head,.about-grid{grid-template-columns:1fr;gap:35px}.split,.split.reverse{display:flex;flex-direction:column;gap:35px;padding:0 20px 85px}.split.reverse .side-copy{order:2}.photo.large,.photo.medium,.about-photo{height:500px}.story-cards{grid-template-columns:1fr;gap:55px}.story-photo{height:470px}.contact-footer{margin-top:80px;gap:15px;flex-wrap:wrap}}
+
+/* V10 — final hero using the user's latest 16:9 export exactly as supplied */
+.site-header {
+  padding: 30px 42px;
+}
+.site-header nav {
+  margin-left: auto;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
+  background: #d8c1a8;
+}
+
+.hero > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: initial;
+  image-rendering: auto;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.13) 0%, rgba(0,0,0,0) 42%, rgba(0,0,0,.06) 100%);
+  pointer-events: none;
+}
+
+.hero-copy {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: #f5f1e8;
+  z-index: 2;
+  text-align: left;
+}
+
+.hero-name {
+  position: absolute;
+  left: 6.1%;
+  top: 29%;
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: clamp(2rem, 3vw, 3.35rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-shadow: 0 1px 16px rgba(0,0,0,.16);
+}
+
+.hero-role {
+  position: absolute;
+  left: 6.15%;
+  top: 35%;
+  font-family: "DM Mono", monospace;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .24em;
+  opacity: .96;
+}
+
+.hero-divider {
+  position: absolute;
+  left: 6.15%;
+  top: 40%;
+  width: 1px;
+  height: 6%;
+  background: currentColor;
+  opacity: .8;
+}
+
+.hero-tagline {
+  position: absolute;
+  left: 6%;
+  top: 62%;
+  width: min(47%, 720px);
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(2.2rem, 4.15vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  text-shadow: 0 1px 16px rgba(0,0,0,.12);
+}
+
+.hero-location {
+  position: absolute;
+  left: 6.15%;
+  top: 87%;
+  font-family: "DM Mono", monospace;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  white-space: nowrap;
+}
+
+.hero-scroll {
+  position: absolute;
+  left: 6.15%;
+  top: 92%;
+  font-family: Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1;
+  opacity: .9;
+}
+
+@media (max-width: 800px) {
+  .site-header { padding: 20px; }
+  .hero-name { left: 7%; top: 28%; font-size: clamp(1.8rem, 8vw, 2.8rem); }
+  .hero-role { left: 7.05%; top: 34%; font-size: .64rem; }
+  .hero-divider { left: 7.05%; top: 39%; height: 5%; }
+  .hero-tagline { left: 7%; top: 52%; width: 82%; font-size: clamp(1.85rem, 8vw, 3.2rem); }
+  .hero-location { left: 7.05%; top: 87%; font-size: .62rem; }
+  .hero-scroll { left: 7.05%; top: 92%; }
+}
+
+/* V17 — hero identity placement for the panoramic composition */
+.hero-name {
+  left: 6.1% !important;
+  top: 11% !important;
+  font-size: clamp(2rem, 3vw, 3.35rem) !important;
+}
+.hero-role {
+  left: 6.15% !important;
+  top: 17.5% !important;
+}
+.hero-divider {
+  left: 6.15% !important;
+  top: 23% !important;
+  height: 6% !important;
+}
+.hero-tagline {
+  left: 6% !important;
+  top: 55% !important;
+  width: min(47%, 720px) !important;
+}
+.hero-location {
+  left: 6.15% !important;
+  top: 86% !important;
+}
+.hero-scroll {
+  left: 6.15% !important;
+  top: 92% !important;
+}
+
+/* V17 — remove the empty beige gap before the Approach copy */
+.hero + .section,
+.hero + section {
+  padding-top: 42px !important;
+}
+
+
+/* V18 — mobile art direction */
+@media (max-width: 800px) {
+  .site-header {
+    padding: 18px 20px !important;
+  }
+
+  .site-header .nav {
+    display: none !important;
+  }
+
+  .site-header .menu-toggle {
+    display: block !important;
+  }
+
+  .hero {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 4 / 5 !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .hero > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 67% center !important;
+  }
+
+  .hero-copy {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .hero-name {
+    left: 7% !important;
+    top: 8% !important;
+    font-size: clamp(1.85rem, 8vw, 2.6rem) !important;
+    line-height: .98 !important;
+  }
+
+  .hero-role {
+    left: 7.1% !important;
+    top: 14.5% !important;
+    font-size: .62rem !important;
+    letter-spacing: .18em !important;
+  }
+
+  .hero-divider {
+    left: 7.1% !important;
+    top: 20% !important;
+    height: 5% !important;
+  }
+
+  .hero-tagline {
+    left: 7% !important;
+    top: 59% !important;
+    width: 82% !important;
+    font-size: clamp(2rem, 8.8vw, 3.1rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  .hero-location {
+    left: 7.1% !important;
+    top: 88% !important;
+    font-size: .58rem !important;
+    letter-spacing: .17em !important;
+  }
+
+  .hero-scroll {
+    left: 7.1% !important;
+    top: 93% !important;
+    font-size: 1.1rem !important;
+  }
+
+  .section {
+    padding: 72px 7vw !important;
+  }
+
+  .intro-grid {
+    display: block !important;
+  }
+
+  .intro h2,
+  .stories-head h2,
+  .about-copy h2,
+  .contact-content h2,
+  .side-copy h2 {
+    font-size: clamp(34px, 10vw, 48px) !important;
+  }
+
+  .intro-grid .copy {
+    max-width: none !important;
+    margin-top: 34px !important;
+  }
+
+  .stories-grid {
+    grid-template-columns: 1fr !important;
+    gap: 42px !important;
+  }
+
+  .split,
+  .split.reverse {
+    display: block !important;
+    padding-left: 7vw !important;
+    padding-right: 7vw !important;
+  }
+
+  .split .side-copy {
+    margin-top: 32px !important;
+  }
+}
