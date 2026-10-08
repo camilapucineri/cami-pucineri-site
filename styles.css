@@ -223,9 +223,9 @@
 
   .hero-tagline {
     left: 7% !important;
-    top: 59% !important;
-    width: 82% !important;
-    font-size: clamp(2rem, 8.8vw, 3.1rem) !important;
+    top: 69% !important;
+    width: 58% !important;
+    font-size: clamp(2rem, 8.4vw, 3.05rem) !important;
     line-height: 1.02 !important;
   }
 
